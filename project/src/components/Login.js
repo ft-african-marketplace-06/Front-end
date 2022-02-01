@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
 
@@ -18,19 +18,17 @@ const handleSubmit = (e) => {
                 type="text"
                 name="userName"
                 placeholder='Username'
-                onChange={handleChange}
-
-                />
+                onChange={handleChange}/>
                 <label>Password:</label>
                 <input 
-                type="text"
+                type="password"
                 name="password"
-                placeholder='Password'/>
-                onChange={handleChange}
-                <button> Submit</button>
+                placeholder='Password'
+                onChange={handleChange}/>
+                <button>Submit</button>
             </form>
 
         </div>
     )
 }
-export default Login
+export default Login;

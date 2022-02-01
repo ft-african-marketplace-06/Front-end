@@ -12,12 +12,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBar></NavBar>
-
-      <body>
-        <Item></Item>
-        <Item></Item>
-      </body>
+      <NavBar/>
+      <main>
+        <Item/>
+      </main>
       
     </div>
   );
