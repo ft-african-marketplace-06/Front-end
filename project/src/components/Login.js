@@ -20,20 +20,19 @@ const handleSubmit = (e) => {
                 type="text"
                 name="userName"
                 placeholder='Username'
-                onChange={handleChange}
-
-                />
+                onChange={handleChange}/>
                 <label>Password:</label>
                 <input 
-                type="text"
+                type="password"
                 name="password"
                 placeholder='Password'
                 onChange={handleChange}/>
-                <button> Submit</button>
+
+                <button>Submit</button>
             </form>
             </div>
 
         </div>
     )
 }
-export default Login
+export default Login;

@@ -15,13 +15,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBar></NavBar>
+      <NavBar/>
+      <main>
+        <Item/>
+      </main>
 
-      <body>
-        <Item></Item>
-        <Item></Item>
-     <Owner/>
-      </body>
       
     </div>
   );
