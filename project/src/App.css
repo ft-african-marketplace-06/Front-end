@@ -63,3 +63,23 @@ button {
   width: 30%;
 
 }
+
+.ownerCard  {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid grey;
+	margin: 5% 16%;
+	padding: 5%;
+	width: 45%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+
+}
+
+/* .container{
+	flex-direction: column;
+	justify-content: center;
+	margin: 15%;
+	padding:5%;
+	
+} */

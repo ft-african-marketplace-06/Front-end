@@ -8,6 +8,8 @@ import NavBar from "./components/NavBar";
 
 
 
+
+
 const App = () => {
 
   return (
@@ -17,6 +19,7 @@ const App = () => {
       <body>
         <Item></Item>
         <Item></Item>
+     
       </body>
       
     </div>

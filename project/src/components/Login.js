@@ -12,6 +12,8 @@ const handleSubmit = (e) => {
 }
     return (
         <div>
+            <div className='container'>
+
             <form onSubmit={handleSubmit}>
                 <label>Username:</label>
                 <input
@@ -29,6 +31,7 @@ const handleSubmit = (e) => {
                 onChange={handleChange}/>
                 <button> Submit</button>
             </form>
+            </div>
 
         </div>
     )
