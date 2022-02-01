@@ -17,19 +17,23 @@ const Owner = () => {
   }, [image])
 
   const onImageChange = (e) => {
-    setImages([...e.target.files])
+    setImage([...e.target.files])
   }
 
   return (
     <div>
+    <div className="ownerCard">
       <h1> Owners Profile</h1>
       <input type="file" multiple accept="image/*" onChange={onImageChange} />
-        {imageURLs.map(imageSRC => <img src={imageSrc} />)}
+        {imageURLs.map(imageSRC => <img src={imageSRC} />)}
+       
+<div className="container">
 
-      <p>Name: state.name</p>
-      <p>Location: state.location </p>
-      <p>Add Item Link</p>
-      <input type="file" multiple accept="image/*" onChange={onImageChange} />
+      <p>Name: </p>
+      <p>Location: </p>
+      <button>Add Item</button>
+</div>
+</div>
     </div>
   )
 }
