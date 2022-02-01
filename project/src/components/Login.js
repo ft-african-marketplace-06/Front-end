@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
 
@@ -25,8 +25,8 @@ const handleSubmit = (e) => {
                 <input 
                 type="text"
                 name="password"
-                placeholder='Password'/>
-                onChange={handleChange}
+                placeholder='Password'
+                onChange={handleChange}/>
                 <button> Submit</button>
             </form>
 
