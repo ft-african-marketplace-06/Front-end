@@ -1,15 +1,30 @@
-import React from 'react';
-
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const Item = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(()=>{
+    axios.get('https://build-week-african-marketplace.herokuapp.com/api/items')
+    .then(res => {
+      setItems(res.data)
+    })
+    .catch(err => {
+      console.error(err)
+    })
+  }, []);
+
   return(
-    <div className="Item">
-      <h2>Item Name</h2>
-      <h3>$Price</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget varius ligula. Nullam ut augue augue. Nulla ac ultricies leo. </p>
-      <h3>Location</h3>
-      <h3>Category</h3>
-      <h3>Owner</h3>
+    <div className="itemList">
+      {items.map(item => {
+        return (
+          <div className='item' key={item.item_id}>
+            <p>{item.item_name}</p>
+            <p>{item.item_price}</p>
+          </div>
+          )
+      })}
+
    </div>
   )
 }
