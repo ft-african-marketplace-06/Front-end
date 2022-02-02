@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import  axios from 'axios'
+// import axios from 'axios'
 import { useHistory } from 'react-router-dom'
+import axiosWithAuth from './utils/axiosWithAuth'
 
 const Login = () => {
 
@@ -12,13 +13,14 @@ const handleChange =(e) => {
 }
 const handleSubmit = (e) => {
     e.preventDefault()
-//    axios.post('http://localhost:3000/api/auth/login', credentials)
-//    .then(resp=> {
-//        handlePush.push('/owner')
-//        console.log(resp)
+   axiosWithAuth()
+   .post('http://localhost:3000/api/auth/login', credentials)
+   .then(resp=> {
+       console.log(resp)
+      localStorage.setItem('token')
        
-//    },[])
-// }
+   },[])
+}
     return (
         <div>
             <div className='container'>
