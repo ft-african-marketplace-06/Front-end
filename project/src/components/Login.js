@@ -11,15 +11,16 @@ const Login = () => {
 const handleChange =(e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value })
 }
+console.log(credentials)
 const handleSubmit = (e) => {
     e.preventDefault()
    axiosWithAuth()
    .post('http://localhost:3000/api/auth/login', credentials)
    .then(resp=> {
-       console.log(resp)
+       console.log(resp.data)
       localStorage.setItem('token')
        
-   },[])
+   })
 }
     return (
         <div>
