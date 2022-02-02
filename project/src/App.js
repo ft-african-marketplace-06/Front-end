@@ -3,8 +3,6 @@ import './App.css';
 import { Route } from "react-router-dom";
 import { BrowserRouter as Router } from 'react-router-dom'; 
 
-
-
 import Item from './components/Item';
 import NavBar from "./components/NavBar";
 import Owner from "./components/Owner";
