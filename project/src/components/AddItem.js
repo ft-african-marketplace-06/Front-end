@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+const initialItem = {
+    name:'',
+    price:'',
+    location:'',
+    category:'',
+    owner:'',
+    description:''
+};
 
 
 const AddItem = () => {
-    const [state, setState] = useState({
-        name:'',
-        price:'',
-        location:'',
-        category:'',
-        owner:'',
-        description:''
-    });
+    const [item, setItem] = useState(initialItem)
 
-    const handleChange = e => {
-        setState({
-            ...state,
+    const handleChange = (e) => {
+        setItem({
+            ...item,
             [e.target.name]:e.target.value
         });
     }

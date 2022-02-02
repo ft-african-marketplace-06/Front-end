@@ -17,17 +17,18 @@ const handleSubmit = (e) => {
             <form onSubmit={handleSubmit}>
                 <label>Username:</label>
                 <input
-                type="text"
-                name="userName"
-                placeholder='Username'
-                onChange={handleChange}/>
+                    type="text"
+                    name="userName"
+                    placeholder='Username'
+                    onChange={handleChange}
+                />
                 <label>Password:</label>
                 <input 
-                type="password"
-                name="password"
-                placeholder='Password'
-                onChange={handleChange}/>
-
+                    type="password"
+                    name="password"
+                    placeholder='Password'
+                    onChange={handleChange}
+                />
                 <button>Submit</button>
             </form>
             </div>
