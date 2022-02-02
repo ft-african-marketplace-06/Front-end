@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory} from 'react-router-dom'
 
 const Owner = () => {
   const [owner, setOwner] = useState({
@@ -9,6 +10,8 @@ const Owner = () => {
   const [image, setImage] = useState([])
   const [imageURLs, setImageURLs] = useState([])
 
+  const history = useHistory()
+
   useEffect(() => {
     if (image.length < 1) return
     const newImageURLs = []
@@ -18,6 +21,10 @@ const Owner = () => {
 
   const onImageChange = (e) => {
     setImage([...e.target.files])
+  }
+
+  const handleLogout = () => {
+    history.push('/')
   }
 
   return (
@@ -32,6 +39,7 @@ const Owner = () => {
       <p>Name: </p>
       <p>Location: </p>
       <button>Add Item</button>
+      <button onClick={handleLogout}>Logout</button>
 </div>
 </div>
     </div>
