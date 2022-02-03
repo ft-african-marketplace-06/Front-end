@@ -21,8 +21,7 @@ const App = () => {
           <Route path='/account' component={Owner} />
           <Route path='/shop' component={Item} />
           <Route path='/register' component={Register} />
-          {/* <Item/> */}
-          {/* <Owner/> */}
+       
         </Switch>
     </div>
   );
