@@ -1,20 +1,18 @@
-import React from 'react';
-import { Link, Route } from "react-router-dom";
-import { BrowserRouter as Router } from 'react-router-dom'; 
-
-import Login from './Login.js';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
-    return(
-        <div className='NavBar'>
-            <Router>
-                <Link to="/login">Login</Link>
-                <Route exact path= '/login' component={Login}/>      
-                <Link to='/'>Home</Link>
-            </Router>
-            <button>Search</button>
-        </div>
-    )
+  const isLoggedIn = localStorage.getItem('token')
+  return (
+    <div className="NavBar">
+        <Link to='/'>Home</Link>
+        <Link to='/shop'>Shop</Link>
+        <Link to='/account'>Account</Link>
+        <Link to='/login'>Login</Link>
+        <Link to='/register'>Register</Link>
+        <button>Search</button>
+    </div>
+  )
 }
 
-export default NavBar;
+export default NavBar
