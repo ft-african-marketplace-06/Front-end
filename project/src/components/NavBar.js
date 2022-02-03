@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 import Login from "./Login.js";
 const NavBar = () => {
