@@ -11,7 +11,6 @@ const NavBar = () => {
       <Router>
         <Link to="/login">Login</Link>
         <Route exact path="/login" component={Login} />
-        {isLoggedIn && <p>Welcome {localStorage.getItem('username')}</p>}
         <Link to="/">Home</Link>
       </Router>
       <button>Search</button>

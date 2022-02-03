@@ -17,9 +17,8 @@ const App = () => {
     <div className="App">
       <NavBar/>
       <main>
-        <Item/>
-        
-        <Route path="/owner" component={Owner}/>
+        <Item/> 
+        <Owner />
       </main>
     </div>
   );
