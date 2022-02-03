@@ -1,25 +1,27 @@
 import React, { useState } from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 import { useHistory } from 'react-router-dom'
-import axiosWithAuth from './utils/axiosWithAuth'
 
 const Login = () => {
+  const [credentials, setCredentials] = useState({ usename: '', password: '' })
+  const handlePush = useHistory()
+
   const [credentials, setCredentials] = useState({ username: '', password: '' })
-  const history = useHistory()
+  const handlePush = useHistory()
 
   const handleChange = (e) => {
-      console.log(credentials)
     setCredentials({ ...credentials, [e.target.name]: e.target.value })
   }
-
   const handleSubmit = (e) => {
     e.preventDefault()
-    axiosWithAuth()
-      .post('http://localhost:3000/api/auth/login', credentials)
+    axios
+      .post(
+        'https://build-week-african-marketplace.herokuapp.com/api/auth/login',
+        credentials,
+      )
       .then((resp) => {
+        handlePush.push('/owner')
         console.log(resp)
-        localStorage.setItem('token')
-        history.push('/owner')
       })
       .catch((err) => {
         console.log(err)

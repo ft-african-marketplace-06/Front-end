@@ -1,11 +1,8 @@
 import React from 'react'
-import { Link, Route } from 'react-router-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import Login from './Login.js'
-
-const NavBar = () => {
-  const isLoggedIn = localStorage.getItem('token')
+const NavBar = ()=> {
   return (
     <div className="NavBar">
       <Router>
@@ -13,7 +10,13 @@ const NavBar = () => {
         <Route exact path="/login" component={Login} />
         <Link to="/">Home</Link>
       </Router>
+       
+        <Link to='/shop'>Shop</Link>
+        <Link to='/account'>Account</Link>
+      
+        <Link to='/register'>Register</Link>
       <button>Search</button>
+       
     </div>
   )
 }
