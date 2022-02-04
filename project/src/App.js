@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import { PrivateRoute } from "./components/PrivateRoute";
 import Logout from "./components/logout";
+
 const App = () => {
  return (
   <div className='App'>
