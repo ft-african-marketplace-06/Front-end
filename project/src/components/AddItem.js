@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import axiosWithAuth from './utils/axiosWithAuth';
+
+const userId = localStorage.getItem('user_id');
 
 const initialValues = {
-    location_id: '',
+    location_id: 1,
     item_name: '',
     item_price: '',
     item_category: '',
     item_description: '',
-    user_id: localStorage.getItem('user_id')
+    user_id: userId
 };
 
 
@@ -38,9 +41,10 @@ const AddItem = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://build-week-african-marketplace.herokuapp.com/api/items', formValues)
+        setFormValues({ ...formValues, item_price: parseFloat(formValues.item_price)})
+        axiosWithAuth().post('https://build-week-african-marketplace.herokuapp.com/api/items', formValues)
             .then(resp=> {
-                handlePush('/shop');
+                handlePush.push('/shop');
                 console.log(resp)
             })
             .catch(err => {
@@ -57,7 +61,6 @@ const AddItem = () => {
                         {locations.map(location => {
                             return <option 
                                 key={location.location_id}
-                                defaultValue={''} 
                                 value={location.location_id}>
                                     {location.location_name}
                                 </option>
