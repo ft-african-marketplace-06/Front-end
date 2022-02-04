@@ -1,20 +1,17 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-import axiosWithAuth from '../components/utils/axiosWithAuth'
-
 const Logout = () => {
   const { push } = useHistory();
 
   useEffect(() => {
-    axiosWithAuth()
-      .post("./logout")
-      .then(() => {
-        localStorage.removeItem("token");
-        push("/login");
-      });
+    if(localStorage.getItem('token')) {
+      localStorage.removeItem("token");
+      localStorage.removeItem('user_id');
+    }
+    push("/login");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   return <div></div>;
 };
 

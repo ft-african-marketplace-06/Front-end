@@ -16,7 +16,6 @@ const Login = () => {
         axios.post('https://build-week-african-marketplace.herokuapp.com/api/auth/login', credentials)
             .then(resp=> {
                 localStorage.setItem('token', resp.data.token);
-                // will not work until back end is updated
                 localStorage.setItem('user_id', resp.data.user_id);
                 handlePush.push('/owner')
                 console.log(resp)
