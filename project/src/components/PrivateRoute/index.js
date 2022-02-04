@@ -5,10 +5,12 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={(props) => {
+      render={() => {
         if (localStorage.getItem("token")) {
-          return <Component {...props} />;
+          console.log('private route token get')
+          return (<Component />);
         } else {
+          console.log('private route token denied')
           return <Redirect to="/login" />;
         }
       }}
