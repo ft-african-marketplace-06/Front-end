@@ -8,6 +8,7 @@ import Owner from "./components/Owner";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { PrivateRoute } from "./components/PrivateRoute";
+import AddItem from "./components/AddItem";
 import Logout from "./components/logout";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
     <Route path='/register' component={Register} />
     <PrivateRoute path='/account' component={Owner} />
     <PrivateRoute path='/shop' component={Item} />
+    <PrivateRoute path='/add-item' component={AddItem} />
     <PrivateRoute path='/logout' component={Logout} />
    </Switch>
   </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 const Owner = () => {
  const [owner, setOwner] = useState({
@@ -39,7 +40,9 @@ const Owner = () => {
     <div className='container'>
      <p>Name: </p>
      <p>Location: </p>
-     <button>Add Item</button>
+     <Link to='/add-item'>
+      <button>Add Item</button>
+     </Link>
      <button onClick={handleLogout}>Logout</button>
     </div>
    </div>
